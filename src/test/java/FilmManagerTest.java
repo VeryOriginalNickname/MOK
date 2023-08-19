@@ -5,9 +5,10 @@ public class FilmManagerTest {
 
     @Test
     public void Test() {
-        FilmManager.setName("Bob");
+        FilmManager filmManager = new FilmManager();
+        filmManager.newFilm("BoB");
 
-
+        filmManager.returnFilms();
     }
 
 }
