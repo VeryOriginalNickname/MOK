@@ -1,7 +1,17 @@
 public class FilmManager {
 
-    String[] films = {"Гадкий я", "Тачки", "Интерстеллар", "Марсианин"
-    };
+    String[] films = {"Гадкий я", "Тачки", "Интерстеллар", "Марсианин", "Тролли", "Шрек"};
+
+    private int returnNumber;
+
+    public FilmManager() {
+        returnNumber = 5;
+    }
+
+    public FilmManager(int neededNumber) {
+        returnNumber = neededNumber;
+    }
+
 
     public String[] newFilm(String name) {
 
@@ -14,15 +24,24 @@ public class FilmManager {
         return films;
     }
 
-    public String[] returnFilms() {
+    public String[] findAll() {
         return films;
     }
 
-    public String[] reverseReturnFilms() {
-        String[] reverse = new String[films.length];
-        for (int i = 0; i < reverse.length; i++) {
-            reverse[i] = films[films.length - 1 - i];
+    public String[] findLast() {
+        int result;
+        if (returnNumber == 5) {
+            result = 5;
+        } else {
+            result = returnNumber;
         }
-        return reverse;
+
+        String[] reversed = new String[result];
+
+        for (int i = 0; i < returnNumber; i++) {
+            reversed[i] = films[films.length - 1 - i];
+
+        }
+        return reversed;
     }
 }
